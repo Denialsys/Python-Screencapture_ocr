@@ -9,7 +9,7 @@ import winsound
 user32 = ctypes.windll.user32
 isTriggered = lambda triggerKey: user32.GetKeyState(triggerKey) > 1
 mousetracker = mousetracking.MouseTracking()
-text_extractor = characterrecognition.CharacterRecognition()
+text_extractor = characterrecognition.CharacterRecognition('ja')
 
 # Key code for printscreen
 VK_F10 = 0x79
@@ -48,7 +48,7 @@ def snip_screen_capture():
 
 
 def extract_characters(img):
-    text_extracted = text_extractor.get_text(img, 'ja')
+    text_extracted = text_extractor.get_text(img)
     print(text_extracted)
     return 0
 

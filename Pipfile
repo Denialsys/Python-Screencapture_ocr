@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 pillow = "*"
+easyocr = "*"
+opencv-python = "==4.5.5.64"
 
 [dev-packages]
 
