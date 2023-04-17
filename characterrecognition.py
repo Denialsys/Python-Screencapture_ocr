@@ -17,10 +17,11 @@ class CharacterRecognition:
         :return:
         '''
         # Load the OCR model for Japanese
+        image.save(self.outputfile_raw)
 
-        image.save('D:\\Desktop\\file_name.png')
         # Read the text from the screenshot
-        result = self.reader.readtext('D:\\Desktop\\file_name.png', paragraph=True)
+        result = self.reader.readtext(self.outputfile_raw, paragraph=True)
+
         # Extract the Japanese text from the OCR result
         extracted_text = ''.join(item[1] for item in result)
         return extracted_text
